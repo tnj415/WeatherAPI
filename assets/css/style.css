@@ -10,21 +10,83 @@ nav.menu {
     flex-direction: row;
     width: 100%;
     background-color: #000000b3;
+    border-bottom: 5px solid white;
     border-radius: 20px 20px 0 0;
-    text-align: center;
+    justify-content: space-between;
+}
+
+button.resize {
+    margin: 15px;
+}
+
+button.background-options {
+    margin: 15px;
 }
 
 main {
     flex-direction: row;
     display: flex;
     width: 100%;
-    justify-content: center;
+    margin: 20px;
+    justify-content: space-around;
 }
 
-/* button.resize {
-    display: none;
+section.search-container {
+    background-color: #000000b3;
+    padding: 10px;
+    margin: 0px 20px;
+    border-radius: 10px;
+    border: 2px solid white;
+    width: 50%;
 }
 
-button.background-options {
-    display: none;
-} */
+form {
+    padding-bottom: 20px;
+}
+
+input.city-search {
+    border: none;
+    height: 2.5em;
+    width: 75%;
+    border-radius: 20px;
+    padding: 0 .5em 0 1em;
+    background-color: #454545b3;
+    color: white;
+    font-size: 120%;
+}
+
+input.city-search:active {
+    background-color: black;
+}
+button.search-btn {
+    border-radius: 50%;
+    margin: .5em;
+    border: none;
+    padding: .5em;
+    height: 3.5em;
+    width: 3.5em;
+    background-color: #454545b3;
+    color: white;
+}
+
+button.search-btn:hover {
+background-color: black;
+color: rgba(128, 128, 128, 0.7);
+}
+
+article.history {
+    border-top: 2px solid white;
+}
+
+section.forecast {
+    background-color: #000000b3;
+    padding: 10px;
+    margin: 0px 20px;
+    border-radius: 10px;
+    border: 2px solid white;
+    width: 50%
+}
+
+article.future {
+    border-top: 2px solid white;
+}
