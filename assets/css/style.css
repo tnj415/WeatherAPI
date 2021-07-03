@@ -1,0 +1,30 @@
+body {
+    background-color: #8080808c;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+nav.menu {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #000000b3;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+}
+
+main {
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+/* button.resize {
+    display: none;
+}
+
+button.background-options {
+    display: none;
+} */
