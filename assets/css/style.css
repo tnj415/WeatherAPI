@@ -38,6 +38,7 @@ section.search-container {
     border-radius: 10px;
     border: 2px solid white;
     width: 50%;
+    letter-spacing: .1em;
 }
 
 form {
@@ -55,9 +56,18 @@ input.city-search {
     font-size: 120%;
 }
 
-input.city-search:active {
-    background-color: black;
+input.city-search:hover {
+    transition: .2s ease-in-out;
+    background-color: #535353b3;
+
+
 }
+
+input.city-search:focus {
+    background-color: #535353b3;
+    border: none;
+}
+
 button.search-btn {
     border-radius: 50%;
     margin: .5em;
@@ -67,11 +77,13 @@ button.search-btn {
     width: 3.5em;
     background-color: #454545b3;
     color: white;
+    letter-spacing: .1em;
 }
 
 button.search-btn:hover {
-background-color: black;
-color: rgba(128, 128, 128, 0.7);
+    background-color: #535353b3;
+    cursor: pointer;
+    transition: .2s ease-in-out;
 }
 
 article.history {
