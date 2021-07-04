@@ -13,6 +13,7 @@ nav.menu {
     border-bottom: 5px solid white;
     border-radius: 20px 20px 0 0;
     justify-content: space-between;
+    letter-spacing: .2em;
 }
 
 button.resize {
@@ -97,6 +98,12 @@ section.forecast {
     border-radius: 10px;
     border: 2px solid white;
     width: 50%
+}
+
+.at-a-glance {
+    display: flex;
+    justify-content: space-around;
+    letter-spacing: .1em;
 }
 
 article.future {

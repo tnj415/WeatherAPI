@@ -1,4 +1,5 @@
-var cagEl = document.querySelector(".city-at-glance")
+var cityEl = document.querySelector(".city")
+var dateEl = document.querySelector(".date")
 //var iconEl = document.querySelector("#w-icon")
 var tempEl = document.querySelector(".temp")
 var humEl = document.querySelector(".hum")
@@ -14,11 +15,11 @@ searchBtn.addEventListener("click", searchCity);
 function searchCity(e) {
     e.preventDefault();
     if (userInputEl.value != "") {
-        getAPI(userInputEl.value)
+        getAPI1(userInputEl.value)
     }
 }
 
-function getAPI(city) {
+function getAPI1(city) {
 
     fetch("https://api.openweathermap.org/data/2.5/weather?q="
         + city
@@ -26,29 +27,74 @@ function getAPI(city) {
         + apiKey)
 
         .then(function (response) {
-            console.log(response.status);
+            console.log("R1: " + response.status);
 
             if (response.status !== 200) {
                 response.text.textContent = response.status;
             }
-        
-        return response.json()
+
+            return response.json()
         })
         .then(function (data) {
-        console.log(data)
-    displayWeather(data)
+            console.log(data)
+            displayWeather1(data)
+            console.log("api1 lat = " + data.coord.lat)
+            console.log("api1 lon = " + data.coord.lon)
+
+            getAPI2(data.coord.lat, data.coord.lon)
+
         });
 }
 
-function displayWeather(data) {
+
+
+
+function getAPI2(lat, lon) {
+
+    var lati = lat;
+    var long = lon;
+
+    console.log("lat = " + lati)
+    console.log("lon = " + long)
+    fetch("https://api.openweathermap.org/data/2.5/onecall?lat="
+        + lati
+        + "&lon="
+        + long
+        + "&appid="
+        + apiKey)
+        .then(function (response) {
+            console.log("R2: " + response.status);
+
+            if (response.status !== 200) {
+                response.text.TextContent = response.status;
+            }
+
+            return response.json()
+        })
+        .then(function (data) {
+            displayWeather2(data)
+            console.log(data)
+        })
+}
+
+function displayWeather1(data) {
     //data.weather[0].icon
 
-    cagEl.innerText = data.name + " " + moment().format("MM/DD/YYYY")
+    cityEl.innerText = data.name
     tempEl.innerText = "Temperature: " + data.main.temp + "°F";
     humEl.innerText = "Humidity: " + data.main.humidity + "%";
     wsEl.innerText = "Wind Speed: " + data.wind.speed + "MPH"
 }
 
+function displayWeather2(data) {
+    //data.weather[0].icon
+    var tz = data.timezone
+    //var tzOffset = data.timezone_offset
+
+    dateEl.innerText = moment().zone(tz).format("MM/DD/YYYY")
+   // dateEl.innerText = moment().zone(tzOffset).format("MM/DD/YYYY")
+    uviEl.innerText = "UV Index: " + (data.current.uvi).toFixed(2)
+}
 
 
 
