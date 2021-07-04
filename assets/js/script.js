@@ -88,13 +88,14 @@ function displayWeather1(data) {
 
 function displayWeather2(data) {
     //data.weather[0].icon
-    //var tz = data.timezone
+    var tz = data.timezone
     //var tzOffset = data.timezone_offset
 
     //var currentDate = moment().format("MM/DD/YYYY hh:mm A z")
     // console.log("does this work? " + moment().tz( tz).format("MM/DD/YYYY"))
+    //let cityName = $('<h4>').addClass('card-title').text(searchInput + ' (' + new Date().toLocaleDateString() + ') ');
 
-    //dateEl.innerText = moment().tz(tz).format("MM/DD/YYYY")
+    dateEl.innerText = dayjs().tz(tz).format('MM/DD/YYYY');
 
     uviEl.innerText = "UV Index: " + (data.current.uvi).toFixed(2)
 }
