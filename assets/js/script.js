@@ -88,33 +88,17 @@ function displayWeather1(data) {
 
 function displayWeather2(data) {
     //data.weather[0].icon
-    var tz = data.timezone
+    //var tz = data.timezone
     //var tzOffset = data.timezone_offset
 
-    dateEl.innerText = moment().zone(tz).format("MM/DD/YYYY")
-   // dateEl.innerText = moment().zone(tzOffset).format("MM/DD/YYYY")
+    //var currentDate = moment().format("MM/DD/YYYY hh:mm A z")
+    // console.log("does this work? " + moment().tz( tz).format("MM/DD/YYYY"))
+
+    //dateEl.innerText = moment().tz(tz).format("MM/DD/YYYY")
+
     uviEl.innerText = "UV Index: " + (data.current.uvi).toFixed(2)
 }
 
+function setDate () {
 
-
-
-
-
-
-
-    // .then(function (response) {
-    //     if (!response.ok) {
-    //     throw response.json();
-    //     }
-
-    //     return response.json();
-    // })
-    // .then(function (data) {
-    //     console.log(data);
-    // })
-    // .catch(function (error) {
-    //     console.error(error)
-    // })
-
-
+}
