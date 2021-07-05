@@ -80,7 +80,6 @@ button.search-btn {
     width: 3.5em;
     background-color: #454545b3;
     color: white;
-    /* letter-spacing: .1em; */
 }
 
 button.search-btn:hover {
