@@ -10,7 +10,7 @@ var uviEl = document.querySelector(".uvi")
 
 var userInputEl = document.querySelector(".city-search")
 var searchBtnEl = document.querySelector(".search-btn")
-
+var setDet = null
 var ss1DateEl = document.querySelector(".ss1-date")
 var ss2DateEl = document.querySelector(".ss2-date")
 var ss3DateEl = document.querySelector(".ss3-date")
@@ -120,8 +120,19 @@ function searchCity(e) {
 
 function getAPI1(city) {
 
+   var bgWidth = 1600
+   var bgHeight = 900
+    if (window.screen.width <= 700) {
+    bgWidth = 700
+    bgHeight = 900
+    }
 
-    document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + city + "')"
+
+    document.body.style.backgroundImage = "url('https://source.unsplash.com/"
+    + bgWidth 
+    + "x"
+    + bgHeight 
+    + "/?" + city + "')"
 
     fetch("https://api.openweathermap.org/data/2.5/weather?q="
         + city
@@ -168,7 +179,7 @@ function getAPI2(lat, lon) {
         + lati
         + "&lon="
         + long
-        + "&appid="
+        + "&units=imperial&appid="
         + apiKey)
         .then(function (response) {
             console.log("R2: " + response.status);
@@ -201,16 +212,18 @@ function displayWeather1(data) {
 function displayWeather2(data) {
     //data.weather[0].icon
 
-    console.log("tz offset = " + data.timezone_offset)
-    var hrDiff = (data.timezone_offset + 25200) / 3600
-    console.log("hrDiff = " + hrDiff)
+    // console.log("tz offset = " + data.timezone_offset)
+    // var hrDiff = (data.timezone_offset + Date.now) / 3600
+    // console.log("hrDiff = " + hrDiff)
 
     //     if (parseInt(moment().format("HH"), 10) + hrDiff >=24) {
     //     dateEl.innerText = moment().calendar('[Tomorrow]', "MM/DD/YYYY")
     // }
     // else if (parseInt(moment().format("HH"), 10) + hrDiff < 24) {
-    dateEl.innerText = moment().format("MM/DD/YYYY")
-    // }
+      
+    currentDate = moment(Date.now() + 86400000).utcOffset(((data.timezone_offset)/3600)).format(" MM/DD/YYYY h:mm A")
+    
+    dateEl.innerText = currentDate
     // else console.log("ERROR IN DW2")
 
     uviEl.innerText = "UV Index: " + (data.current.uvi).toFixed(2)
@@ -244,7 +257,7 @@ function displayFiveDayForecast(data) {
     console.log("5df = ", data)
 
     //snapshot1
-    ss1DateEl.innerText = moment().format("MM/DD/YYYY")
+    ss1DateEl.innerText = moment(Date.now() + 86400000).utcOffset(((data.timezone_offset)/3600)).format(" MM/DD/YYYY")
 
     ss1ImgEl.src = "http://openweathermap.org/img/wn/" + data.daily[0].weather[0].icon + ".png"
 
@@ -253,7 +266,7 @@ function displayFiveDayForecast(data) {
     ss1HumEl.innerText = "Humidity: " + data.daily[0].humidity + "%"
 
     //snapshot2
-    ss2DateEl.innerText = moment().format("MM/DD/YYYY")
+    ss2DateEl.innerText = moment(Date.now() + 2 * 86400000).utcOffset(((data.timezone_offset)/3600)).format(" MM/DD/YYYY")
 
     ss2ImgEl.src = "http://openweathermap.org/img/wn/" + data.daily[1].weather[0].icon + ".png"
 
@@ -262,7 +275,7 @@ function displayFiveDayForecast(data) {
     ss2HumEl.innerText = "Humidity: " + data.daily[1].humidity + "%"
 
     //snapshot3
-    ss3DateEl.innerText = moment().format("MM/DD/YYYY")
+    ss3DateEl.innerText = moment(Date.now() + 3 * 86400000).utcOffset(((data.timezone_offset)/3600)).format(" MM/DD/YYYY")
 
     ss3ImgEl.src = "http://openweathermap.org/img/wn/" + data.daily[2].weather[0].icon + ".png"
 
@@ -271,7 +284,7 @@ function displayFiveDayForecast(data) {
     ss3HumEl.innerText = "Humidity: " + data.daily[2].humidity + "%"
 
     //snapshot4
-    ss4DateEl.innerText = moment().format("MM/DD/YYYY")
+    ss4DateEl.innerText = moment(Date.now() + 4 * 86400000).utcOffset(((data.timezone_offset)/3600)).format(" MM/DD/YYYY")
 
     ss4ImgEl.src = "http://openweathermap.org/img/wn/" + data.daily[3].weather[0].icon + ".png"
 
@@ -280,7 +293,7 @@ function displayFiveDayForecast(data) {
     ss4HumEl.innerText = "Humidity: " + data.daily[3].humidity + "%"
 
     //snapshot5
-    ss5DateEl.innerText = moment().format("MM/DD/YYYY")
+    ss5DateEl.innerText = moment(Date.now() + 5 * 86400000).utcOffset(((data.timezone_offset)/3600)).format(" MM/DD/YYYY")
 
     ss5ImgEl.src = "http://openweathermap.org/img/wn/" + data.daily[4].weather[0].icon + ".png"
 
