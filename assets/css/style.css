@@ -91,6 +91,24 @@ button.search-btn:hover {
 
 article.history {
     border-top: 2px solid white;
+    
+}
+
+button.sh1-click {
+    margin-top: 100px;
+}
+
+button.sh1-click, button.sh2-click, button.sh3-click, button.sh4-click, button.sh5-click {
+    mid-width: fit;
+    min-width: 100%;
+    min-height: 3vh;
+    margin: 2px;
+    background-color: #4d525766;
+    border: 2px solid #578588;
+    font-size: 30px;
+    color: white;
+    font-variant-caps: all-petite-caps;
+    letter-spacing: .1em;
 }
 
 section.forecast {
@@ -121,7 +139,7 @@ h2.date {
 }
 
 img.w-icon {
-    width: 50px;
+    width: 75px;
     margin-left: 20px;
 }
 
@@ -201,7 +219,7 @@ button.search-btn {
     }
 
     h2 {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .at-a-glance {
