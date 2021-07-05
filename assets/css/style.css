@@ -4,7 +4,7 @@ body {
     flex-direction: column;
     color: white;
     /* background-image: url("https://source.unsplash.com/1600x900/?landscape") */
-    
+
 }
 
 nav.menu {
@@ -91,15 +91,19 @@ button.search-btn:hover {
 
 article.history {
     border-top: 2px solid white;
-    
+
 }
 
 button.sh1-click {
     margin-top: 100px;
 }
 
-button.sh1-click, button.sh2-click, button.sh3-click, button.sh4-click, button.sh5-click {
-   
+button.sh1-click,
+button.sh2-click,
+button.sh3-click,
+button.sh4-click,
+button.sh5-click {
+
     max-width: inherit;
     min-width: 100%;
     min-height: 3vh;
@@ -154,7 +158,11 @@ article.future {
     justify-content: center;
 }
 
-.ss1-card, .ss2-card, .ss3-card, .ss4-card, .ss5-card {
+.ss1-card,
+.ss2-card,
+.ss3-card,
+.ss4-card,
+.ss5-card {
     width: fit-content;
     background-color: rgb(112 128 144 / 40%);
     padding: 15px;
@@ -162,7 +170,7 @@ article.future {
     margin: 5px 10px;
 }
 
-@media  screen and (max-width: 1250px) {
+@media screen and (max-width: 1250px) {
 
     h2.date {
         letter-spacing: normal;
@@ -172,28 +180,28 @@ article.future {
         letter-spacing: normal;
     }
 
-   
-}
-
-@media  screen and (max-width: 1000px) {
-
-.at-a-glance {
-    /* display: flex; */
-    display: flex;
-    flex-direction: column;
-    letter-spacing: 0em;
-}
-
-input.city-search {
-  
-    width: 90%;
-    padding-right: 0px;
-    margin: 0px;
 
 }
 
+@media screen and (max-width: 1000px) {
 
-button.search-btn {
+    .at-a-glance {
+        /* display: flex; */
+        display: flex;
+        flex-direction: column;
+        letter-spacing: 0em;
+    }
+
+    input.city-search {
+
+        width: 90%;
+        padding-right: 0px;
+        margin: 0px;
+
+    }
+
+
+    button.search-btn {
         border: none;
         height: 2.5em;
         width: 90%;
@@ -203,36 +211,50 @@ button.search-btn {
         /* padding: 0 .5em 0 1em; */
         background-color: #454545b3;
         color: white;
-    
+
     }
 }
 
 
 
 
-@media  screen and (max-width: 700px) {
+@media screen and (max-width: 700px) {
 
     main {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        width: unset;
     }
 
     h2 {
         font-size: 18px;
     }
 
+    section.search-container, section.forecast {
+        width: 90vw;
+        margin: 0px;
+        margin-bottom: 10px;
+        padding: 0px;
+    }
+
     .at-a-glance {
         align-items: center;
     }
 
-    img.w-icon, h2.date, h2.city {
+    img.w-icon,
+    h2.date,
+    h2.city {
         margin-left: 0px;
     }
 
-    button.sh1-click, button.sh2-click, button.sh3-click, button.sh4-click, button.sh5-click {
+    button.sh1-click,
+    button.sh2-click,
+    button.sh3-click,
+    button.sh4-click,
+    button.sh5-click {
         font-size: 16px;
 
-    
+    }
 }
