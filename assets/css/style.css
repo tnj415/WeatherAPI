@@ -3,7 +3,7 @@ body {
     display: flex;
     flex-direction: column;
     color: white;
-    
+    /* background-image: url("https://source.unsplash.com/1600x900/?landscape") */
     
 }
 
@@ -29,9 +29,9 @@ button.background-options {
 main {
     flex-direction: row;
     display: flex;
-    /* width: 100%; */
-    margin: 20px;
     justify-content: space-around;
+    background-color: rgb(218 219 225 / 50%);
+    padding: 20px;
 }
 
 section.search-container {
@@ -127,6 +127,20 @@ img.w-icon {
 
 article.future {
     border-top: 2px solid white;
+}
+
+.snapshot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ss1-card, .ss2-card, .ss3-card, .ss4-card, .ss5-card {
+    width: fit-content;
+    background-color: rgb(112 128 144 / 40%);
+    padding: 15px;
+    border: 2px solid #5f9ea0b3;
+    margin: 5px 10px;
 }
 
 @media  screen and (max-width: 1250px) {
