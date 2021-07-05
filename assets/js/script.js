@@ -1,6 +1,6 @@
 var cityEl = document.querySelector(".city")
 var dateEl = document.querySelector(".date")
-//var iconEl = document.querySelector("#w-icon")
+var iconEl = document.querySelector(".w-icon")
 var tempEl = document.querySelector(".temp")
 var humEl = document.querySelector(".hum")
 var wsEl = document.querySelector(".ws")
@@ -81,6 +81,7 @@ function displayWeather1(data) {
     //data.weather[0].icon
 
     cityEl.innerText = data.name
+    iconEl.src = "http://openweathermap.org/img/wn/" + data.weather[0].icon + ".png"
     tempEl.innerText = "Temperature: " + data.main.temp + "°F";
     humEl.innerText = "Humidity: " + data.main.humidity + "%";
     wsEl.innerText = "Wind Speed: " + data.wind.speed + "MPH"
@@ -88,18 +89,23 @@ function displayWeather1(data) {
 
 function displayWeather2(data) {
     //data.weather[0].icon
-    var tz = data.timezone
-    //var tzOffset = data.timezone_offset
-
-    //var currentDate = moment().format("MM/DD/YYYY hh:mm A z")
-    // console.log("does this work? " + moment().tz( tz).format("MM/DD/YYYY"))
-    //let cityName = $('<h4>').addClass('card-title').text(searchInput + ' (' + new Date().toLocaleDateString() + ') ');
-
-    dateEl.innerText = dayjs().tz(tz).format('MM/DD/YYYY');
+    
+    console.log("tz offset = " + data.timezone_offset)
+    var hrDiff = (data.timezone_offset + 25200) / 3600
+    console.log("hrDiff = " + hrDiff)
+    
+//     if (parseInt(moment().format("HH"), 10) + hrDiff >=24) {
+//     dateEl.innerText = moment().calendar('[Tomorrow]', "MM/DD/YYYY")
+// }
+// else if (parseInt(moment().format("HH"), 10) + hrDiff < 24) {
+    dateEl.innerText = moment().format("MM/DD/YYYY")
+// }
+// else console.log("ERROR IN DW2")
 
     uviEl.innerText = "UV Index: " + (data.current.uvi).toFixed(2)
 }
 
 function setDate () {
+
 
 }
