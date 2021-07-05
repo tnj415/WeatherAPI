@@ -99,7 +99,8 @@ button.sh1-click {
 }
 
 button.sh1-click, button.sh2-click, button.sh3-click, button.sh4-click, button.sh5-click {
-    mid-width: fit;
+   
+    max-width: inherit;
     min-width: 100%;
     min-height: 3vh;
     margin: 2px;
@@ -229,5 +230,9 @@ button.search-btn {
     img.w-icon, h2.date, h2.city {
         margin-left: 0px;
     }
+
+    button.sh1-click, button.sh2-click, button.sh3-click, button.sh4-click, button.sh5-click {
+        font-size: 16px;
+
     
 }
