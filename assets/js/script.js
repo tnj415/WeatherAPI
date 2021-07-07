@@ -221,7 +221,7 @@ function displayWeather2(data) {
     // }
     // else if (parseInt(moment().format("HH"), 10) + hrDiff < 24) {
       
-    currentDate = moment(Date.now() + 86400000).utcOffset(((data.timezone_offset)/3600)).format(" MM/DD/YYYY h:mm A")
+    currentDate = moment(Date.now() + 86400000).utcOffset(((data.timezone_offset)/3600)).format(" MM/DD/YYYY")
     
     dateEl.innerText = currentDate
     // else console.log("ERROR IN DW2")

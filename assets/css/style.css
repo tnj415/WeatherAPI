@@ -102,10 +102,9 @@ button.sh2-click,
 button.sh3-click,
 button.sh4-click,
 button.sh5-click {
-
+    min-height: 40px;
     max-width: inherit;
     min-width: 100%;
-    min-height: 3vh;
     margin: 2px;
     background-color: #4d525766;
     border: 2px solid #578588;
@@ -113,6 +112,16 @@ button.sh5-click {
     color: white;
     font-variant-caps: all-petite-caps;
     letter-spacing: .1em;
+}
+
+button.sh1-click:hover,
+button.sh2-click:hover,
+button.sh3-click:hover,
+button.sh4-click:hover,
+button.sh5-click:hover {
+
+    background-color: #578588;
+    transition: .2s ease-in-out;
 }
 
 section.forecast {
@@ -127,6 +136,7 @@ section.forecast {
 .at-a-glance {
     display: flex;
     letter-spacing: .1em;
+    
 }
 
 h2.city {
@@ -143,8 +153,9 @@ h2.date {
 }
 
 img.w-icon {
-    width: 75px;
-    margin-left: 20px;
+    height: 50px;
+    width: 50px;
+    margin: 7px;
 }
 
 article.future {
