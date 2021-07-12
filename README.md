@@ -7,15 +7,16 @@
 3. [Installation](#installation)
 4. [Usage](#usage)
 5. [Collaboration](#collaboration)
+6. [Deployed Site](#deployed-site)
 6. [Github](#github)
 7. [eMail](#email)
 8. [FAQs](#faqs)
 
-## General Info
+# General Info
 * This is a website that offers users to observe weather conditions of the current day and a 5 day forecast
 * ![Image text](./assets/images/weatherAPIscreenShot.PNG)
 
-## Technologies
+# Technologies
 * This website was created with HTML, CSS, and Javascript code on Microsoft Visual Studio Code.
 
 # Installation
@@ -29,6 +30,9 @@
 
 # Collaboration
 * The sole developer of this website is me, Troy Johnson.
+
+# Deployed Site
+* The website can be accessed in browser at https://tnj415.github.io/WhatsYoWeather/
 
 # Github
 * The Repository can be accessed on Github at https://github.com/tnj415/WhatsYoWeather
