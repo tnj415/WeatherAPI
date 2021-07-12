@@ -8,9 +8,9 @@
 4. [Usage](#usage)
 5. [Collaboration](#collaboration)
 6. [Deployed Site](#deployed-site)
-6. [Github](#github)
-7. [eMail](#email)
-8. [FAQs](#faqs)
+7. [Github](#github)
+8. [eMail](#email)
+9. [FAQs](#faqs)
 
 # General Info
 * This is a website that offers users to observe weather conditions of the current day and a 5 day forecast
@@ -35,7 +35,7 @@
 * The website can be accessed in browser at https://tnj415.github.io/WhatsYoWeather/
 
 # Github
-* The Repository can be accessed on Github at https://github.com/tnj415/WhatsYoWeather
+* The repository can be accessed on Github at https://github.com/tnj415/WhatsYoWeather
 
 # eMail
 * The best way to contact me is at tnj8510@gmail.com.
